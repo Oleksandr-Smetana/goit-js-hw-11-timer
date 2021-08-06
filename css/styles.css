@@ -1,0 +1,33 @@
+:root {
+  --main-color: #ff792c;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 80px;
+  margin: 10px;
+  padding: 10px;
+
+  background-color: #292929;
+  border-radius: 10%;
+  box-shadow: 0px 5px 5px 2px var(--main-color);
+}
+
+.value {
+  font-size: 60px;
+  color: var(--main-color);
+}
+
+.label {
+  font-size: 20px;
+  color: var(--main-color);
+}
