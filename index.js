@@ -12,15 +12,19 @@ class CountdownTimer {
     };
 
     start() {
-        setInterval(() => {
+        const intervalId = setInterval(() => {
             const currentDate = Date.now();
             const deltaTime = this.targetDate - currentDate;
             const { days, hours, mins, secs } = this.getTimeComponents(deltaTime);
             
-            refs.daysValue.textContent = `${days}`;
-            refs.hoursValue.textContent = `${hours}`;
-            refs.minutesValue.textContent = `${mins}`;
-            refs.secondsValue.textContent = `${secs}`;
+            if (deltaTime > 0) {
+                refs.daysValue.textContent = `${days}`;
+                refs.hoursValue.textContent = `${hours}`;
+                refs.minutesValue.textContent = `${mins}`;
+                refs.secondsValue.textContent = `${secs}`;
+            } else {
+                clearInterval(intervalId);
+              }
 
             // console.log(`${days}:${hours}:${mins}:${secs}`);
         }, 1000)
@@ -42,7 +46,7 @@ class CountdownTimer {
 
 const timer = new CountdownTimer({
   selector: '#timer-1',
-  targetDate: new Date('Aug 24, 2021'),
+  targetDate: new Date('Aug 24 2021 GMT+0300'),
 });
 
 timer.start();
