@@ -24,10 +24,10 @@ class CountdownTimer {
                 refs.secondsValue.textContent = `${secs}`;
             } else {
                 clearInterval(intervalId);
-              }
+            };
 
             // console.log(`${days}:${hours}:${mins}:${secs}`);
-        }, 1000)
+        }, 1000);
     };
     
     pad(value) {
